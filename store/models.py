@@ -12,7 +12,7 @@ class Customer(models.Model):
 		return self.name
 	
 
-class Top(models.Model):
+class Product(models.Model):
 	name = models.CharField(max_length=200, null=True)
 	description = models.TextField(max_length=200, null=True)
 	price = models.FloatField()
@@ -21,7 +21,7 @@ class Top(models.Model):
 	is_active= models.BooleanField(default=True)
 
 	class Meta:
-		verbose_name_plural = 'Tops'
+		verbose_name_plural = 'Products'
 
 	def __str__(self):
 		return self.name
@@ -33,76 +33,6 @@ class Top(models.Model):
 		except:
 			url = ''
 		return url
-
-class Bottom(models.Model):
-	name = models.CharField(max_length=200, null=True)
-	description = models.TextField(max_length=200, null=True)
-	price = models.FloatField()
-	image = models.ImageField(null=True, blank=True)
-	in_stock= models.BooleanField(default=True)
-	is_active= models.BooleanField(default=True)
-
-	class Meta:
-		verbose_name_plural = 'Bottoms'
-
-	def __str__(self):
-		return self.name
-	
-	@property
-	def imageURL(self):
-		try:
-			url = self.image.url
-		except:
-			url = ''
-		return url
-	
-
-class Shoe(models.Model):
-	name = models.CharField(max_length=200, null=True)
-	description = models.TextField(max_length=200, null=True)
-	price = models.FloatField()
-	image = models.ImageField(null=True, blank=True)
-	in_stock= models.BooleanField(default=True)
-	is_active= models.BooleanField(default=True)
-
-	class Meta:
-		verbose_name_plural = 'Shoes'
-
-	def __str__(self):
-		return self.name
-	
-	@property
-	def imageURL(self):
-		try:
-			url = self.image.url
-		except:
-			url = ''
-		return url
-	
-
-
-class Accessory(models.Model):
-	name = models.CharField(max_length=200, null=True)
-	description = models.TextField(max_length=200, null=True)
-	price = models.FloatField()
-	image = models.ImageField(null=True, blank=True)
-	in_stock= models.BooleanField(default=True)
-	is_active= models.BooleanField(default=True)
-
-	class Meta:
-		verbose_name_plural = 'Accessories'
-
-	def __str__(self):
-		return self.name
-
-	@property
-	def imageURL(self):
-		try:
-			url = self.image.url
-		except:
-			url = ''
-		return url
-	
 
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
@@ -115,8 +45,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-	#for now, use top
-	product = models.ForeignKey(Top, on_delete=models.SET_NULL, null=True)
+	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=0, null=True, blank=True)
 	order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=0, null=True, blank=True)
