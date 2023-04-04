@@ -3,9 +3,9 @@ from .models import *
 
 # Create your views here.
 
+#home page
 def store(request):
-    products = Product.objects.all()[0:6]
-    context = {'products': products}
+    context = {}
     return render(request, 'store/store.html',context)
 
 def cart(request):
@@ -13,23 +13,23 @@ def cart(request):
     return render(request, 'store/cart.html', context)
 
 def tops(request):
-    products = Product.objects.all()
-    context = {'products':products}
+    tops = Top.objects.all()
+    context = {'tops':tops}
     return render(request, 'store/tops.html', context)
 
 def bottoms(request):
-    products = Product.objects.all()
-    context = {'products':products}
+    bottoms = Bottom.objects.all()
+    context = {'bottoms':bottoms}
     return render(request, 'store/bottoms.html', context)
 
 def shoes(request):
-    products = Product.objects.all()
-    context = {'products':products}
+    shoes = Shoe.objects.all()
+    context = {'shoes':shoes}
     return render(request, 'store/shoes.html', context)
 
 def accessories(request):
-    products = Product.objects.all()
-    context = {'products':products}
+    accessories = Accessory.objects.all()
+    context = {'accessories':accessories}
     return render(request, 'store/accessories.html', context)
 
 def cart(request):

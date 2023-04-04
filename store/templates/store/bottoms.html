@@ -2,38 +2,20 @@
 {% load static %}
 {% block content %}
 <div class="row">
+    {% for bottom in bottoms %}
     <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
+        <img class="thumbnail" src="{% static 'images/shirt.png' %}">
         <div class="box-element product">
-            <h6><strong>Product</strong></h6>
+            <h6><strong>{{bottom.name}}</strong></h6>
             <hr>
-            <button class="btn btn-outline-secoondary add-btn">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="float: right">$19.99</h4>
-        </div>
-    </div>
 
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-        <div class="box-element product">
-            <h6><strong>Product</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secoondary add-btn">Add to Cart</button>
+            <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
             <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="float: right">$19.99</h4>
-        </div>
-    </div>
+            <h4 style="float: right"><strong>${{bottom.price|floatformat:2}}</strong></h4>
 
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-        <div class="box-element product">
-            <h6><strong>Product</strong></h6>
-            <hr>
-            <button class="btn btn-outline-secoondary add-btn">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View</a>
-            <h4 style="float: right">$19.99</h4>
         </div>
     </div>
+    {% endfor %}
 
 </div>
 
