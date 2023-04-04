@@ -4,7 +4,7 @@
 <div class="row">
     {% for shoe in shoes %}
     <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/shirt.png' %}">
+        <img class="thumbnail" src="{{shoe.image.url}}">
         <div class="box-element product">
             <h6><strong>{{shoe.name}}</strong></h6>
             <hr>

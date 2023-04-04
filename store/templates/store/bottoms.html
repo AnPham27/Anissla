@@ -4,7 +4,7 @@
 <div class="row">
     {% for bottom in bottoms %}
     <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/shirt.png' %}">
+        <img class="thumbnail" src="{{bottom.image.url}}">
         <div class="box-element product">
             <h6><strong>{{bottom.name}}</strong></h6>
             <hr>
