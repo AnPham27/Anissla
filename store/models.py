@@ -16,7 +16,6 @@ class Product(models.Model):
     price = models.FloatField()
     
     #image
-
     def __str__(self):
         return self.name
 
