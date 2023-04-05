@@ -15,7 +15,7 @@ class Customer(models.Model):
 class Product(models.Model):
 	name = models.CharField(max_length=200, null=True)
 	description = models.TextField(max_length=200, null=True)
-	price = models.FloatField()
+	price = models.DecimalField(max_digits=7, decimal_places=2)
 	image = models.ImageField(null=True, blank=True)
 	in_stock= models.BooleanField(default=True)
 	is_active= models.BooleanField(default=True)
