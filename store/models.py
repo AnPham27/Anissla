@@ -55,6 +55,11 @@ class Order(models.Model):
 		total = sum([item.quantity for item in orderitems])	
 		return total
 
+	@property
+	def shipping(self):
+		shipping = True #All items are shippable! They're clothes! 
+		return shipping
+
 class OrderItem(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
 	quantity = models.IntegerField(default=0, null=True, blank=True)
