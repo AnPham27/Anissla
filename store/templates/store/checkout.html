@@ -143,13 +143,10 @@
         .then((response ) => response.json())
         .then((data) => {
         console.log('Success:', data);
-        alert('Transaction completed');
+        alert('Transaction completed!');
         window.location.href = "{% url 'store' %}"
     })
 
     }
-
-
-
 </script>
 {% endblock content %}

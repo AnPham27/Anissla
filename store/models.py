@@ -77,7 +77,7 @@ class ShippingAddress(models.Model):
 	order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
 	address = models.CharField(max_length=200, null=False)
 	city = models.CharField(max_length=200, null=False)
-	prov = models.CharField(max_length=200, null=False)
+	province = models.CharField(max_length=200, null=False)
 	postalcode = models.CharField(max_length=200, null=False)
 	date_added = models.DateTimeField(auto_now_add=True)
 
