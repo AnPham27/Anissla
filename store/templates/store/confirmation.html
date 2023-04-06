@@ -1,15 +1,23 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
+<br>
+<br>
+<br>
 <div class="jumbotron text-center">
     <h1 class="display-3"><strong>Thank You!</strong></h1>
+    <br>
     <h1 class="display-6">Your order has been placed.</h1>
+    <br>
     <p class="lead"><strong>Please check your email</strong> for more detailed information on your order.</p>
+    <br>
     <hr>
+    <br>
     <p>
       Having trouble? <a href="{% url 'support' %}">Contact us</a>
     </p>
     <p class="lead">
+      <br>
       <a class="btn btn-primary btn-sm" href="{% url 'store' %}" role="button">Continue to homepage</a>
     </p>
   </div>
