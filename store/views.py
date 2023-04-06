@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import *
 from django.http import JsonResponse
 import json
 import datetime
-from .utils import cookieCart, cartData
+from .utils import cookieCart, cartData, guestOrder
 
 # Create your views here.
 
@@ -19,8 +19,8 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 def cart(request):
-
 	data = cartData(request)
+
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
@@ -30,8 +30,8 @@ def cart(request):
 
 
 def products(request):
-
 	data = cartData(request)
+
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
@@ -42,6 +42,7 @@ def products(request):
 
 def checkout(request):
 	data = cartData(request)
+
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
@@ -80,26 +81,23 @@ def processOrder(request):
 	data = json.loads(request.body)
 
 	if request.user.is_authenticated:
-		customer=request.user.customer
+		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		total = float(data['form']['total'])
-		order.transaction_id = transaction_id
-
-		if total == order.get_cart_total:
-			order.complete = 'True'
-		order.save()
-
-		if order.shipping == 'True':
-			ShippingAddress.objects.create(
-				customer=customer, 
-				order=order,
-				address=data['shipping']['address'],
-				city=data['shipping']['city'],
-				province=data['shipping']['province'],
-				postalcode=data['shipping']['postalcode'],
-			)
-
 	else:
-		print('User is not logged in...')
+		customer, order = guestOrder(request, data)
 
-	return JsonResponse('Payment completed', safe=False)
+	total = float(data['form']['total'])
+	order.transaction_id = transaction_id
+
+	order.complete = True
+	order.save()
+	ShippingAddress.objects.create(
+		customer=customer,
+		order=order,
+		address=data['shipping']['address'],
+		city=data['shipping']['city'],
+		province=data['shipping']['province'],
+		postalcode=data['shipping']['postalcode']
+	)
+
+	return JsonResponse('Payment submitted..', safe=False)
