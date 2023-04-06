@@ -93,9 +93,19 @@ h1,h2,h3,h4,h5,h6{
 .btn{
 	border-radius: 50px;
 	background-color: #eaa2ed;
-	color:#3f224f;
+	color:#000000;
 	border: #eaa2ed;
 	
+}
+
+.btn:hover {
+	background-color: #F1C2F3;
+	color:#000000;
+}
+
+.btn:active {
+	background-color: #DF83E2;
+	color:#000000;
 	
 }
 
