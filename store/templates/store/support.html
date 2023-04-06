@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div id="shipping-info">
+<div id="customer support">
     <hr>
     <p>Contact Information</p>
     <hr>
@@ -15,9 +15,16 @@
     <div class="form-field">
         <input class="form-control" type="text" name="email" placeholder="Email...">
     </div>
-    <div class="text-field">
-        <input class="form-control" type="text" name="concerns" placeholder="Please type out your concern">
+    <div class="form-group">
+        <br>
+        <label for="exampleFormControlTextarea1">Please let us know your concerns:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        
     </div>
+    <p class="lead">
+        <br>
+        <a class="btn btn-primary btn-sm" href="{% url 'store' %}" role="button">Submit & Continue to Home</a>
+      </p>
 
 </div>
 {% endblock content %}

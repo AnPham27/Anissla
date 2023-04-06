@@ -103,9 +103,38 @@ def processOrder(request):
 
 
 def confirmation(request):
-	context = {}
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/confirmation.html', context)
 
 def support(request):
-	context = {}
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store/support.html', context)
+
+def signup(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'store/signup.html', context)
+
+def login(request):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'store/login.html', context)
