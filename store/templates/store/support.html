@@ -1,0 +1,23 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div id="shipping-info">
+    <hr>
+    <p>Contact Information</p>
+    <hr>
+    <div class="form-field">
+        <input class="form-control" type="text" name="Firstname" placeholder="First name...">
+    </div>
+    <div class="form-field">
+        <input class="form-control" type="text" name="Lastname" placeholder="Last name...">
+    </div>
+    <div class="form-field">
+        <input class="form-control" type="text" name="email" placeholder="Email...">
+    </div>
+    <div class="text-field">
+        <input class="form-control" type="text" name="concerns" placeholder="Please type out your concern">
+    </div>
+
+</div>
+{% endblock content %}

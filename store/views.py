@@ -73,7 +73,6 @@ def updateItem(request):
 	if orderItem.quantity <= 0:
 		orderItem.delete()
 
-
 	return JsonResponse('Item was added', safe=False)
 
 def processOrder(request):
@@ -101,3 +100,12 @@ def processOrder(request):
 	)
 
 	return JsonResponse('Payment submitted..', safe=False)
+
+
+def confirmation(request):
+	context = {}
+	return render(request, 'store/confirmation.html', context)
+
+def support(request):
+	context = {}
+	return render(request, 'store/support.html', context)
