@@ -65,19 +65,22 @@
 
         
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          
             
             <a class="navbar-brand" href="{% url 'store' %}">&#x2661; Anissla</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'products' %}">Products <span class="sr-only"></span></a>
+                  <a class="nav-link" href="{% url 'products' %}">Products<span class="sr-only"></span></a>
                 </li>
-            </ul>
-            <div class="form-inline my-2 my-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'support' %}">Contact<span class="sr-only"></span></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="form-inline my-2 my-lg-0 ">
                  <a href="{% url 'login' %}"class="btn btn-warning">Login</a>
                  
                  <a href="{% url 'cart' %}">
@@ -92,7 +95,6 @@
         <div class="container">
             <br>
             {% block content %}
-
             {% endblock content %}
         </div>
 

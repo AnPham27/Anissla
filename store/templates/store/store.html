@@ -5,16 +5,23 @@
 
   <section class="py-5 text-center container">
     <div class="row py-lg-3">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Welcome to Anissla.</h1>
-        <p class="lead text-muted">This website is created by: An Pham, Marissa Angeles, and Necla Tefon. Third-year software engineering project</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Make an account</a>
-        </p>
+      <div class ="Banner">
+        <div class="jumbotron text-center">
+          <h1 class="display-3">Welcome to Anissla</h1>
+          <p class="lead text-muted">At Anissla, we believe that your sportswear should 
+          not only enhance your performance but also make you look and feel your best. 
+          That's why we have curated a collection of premium athletic apparel that is both innovative and 
+          sleek, designed to meet the needs of modern athletes.</p>
+          <p>
+            <a href="{% url 'login'%}" class="btn btn-primary my-2">Make an account</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
+
+  
 </main>
 
 {% endblock content %}
