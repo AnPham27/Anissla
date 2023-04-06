@@ -11,7 +11,9 @@ urlpatterns = [
     path('update_item/', views.updateItem, name="update_item"),
     path('process_order/', views.processOrder, name="process_order"),
     path('confirmation/', views.confirmation, name="confirmation"),
-    path('support/', views.support, name="support")
+    path('support/', views.support, name="support"),
+    path('login/', views.login, name="login"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

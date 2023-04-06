@@ -1,0 +1,55 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-5"><strong>Sign up</strong></h1>
+    <h1 class="display-5">Please enter your information</h1>
+    <div id="user-info">
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="text" name="fname" placeholder="First name...">
+        </div>
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="text" name="lname" placeholder="Last name...">
+        </div>
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="email" name="email" placeholder="Email...">
+        </div>
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="email" name="email" placeholder="Confirm Email...">
+        </div>
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="password" name="password" placeholder="Password...">
+        </div>
+        <br>
+        <div class="form-field">
+            <input required class="form-control" type="password" name="password" placeholder="Confirm Password...">
+        </div>
+    
+    </div>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" href="{% url 'products' %}" role="button">Sign up & Start Shopping</a>
+    </p>
+  </div>
+
+
+<script type="text/javascript">
+	console.log('User Info:', userFormData)
+    var userFormData = {
+                'name':null,
+                'email':null,
+            }
+
+    userFormData.name = form.name.value
+    userFormData.email = form.email.value
+    user != 'AnonymousUser'
+    if (user != 'AnonymousUser'){
+ 	    document.getElementById('user-info').innerHTML = ''
+    }
+
+</script>
+{% endblock content %}
