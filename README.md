@@ -1,7 +1,7 @@
 # Anissla
 
 
-Third-year software engineering project created by: An Pham, Marissa Angeles, and Necla Tefon
+Third-year software engineering project
 
 Anissla is an e-commerce platform for athletic apparel. Our website is built using Django, HTML, CSS, Javascript, and Python
 
