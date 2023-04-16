@@ -11,7 +11,7 @@ Our website allows users to browse and purchase athletic apparel. Users can crea
 
 This project is still undergoing changes! 
 
-#Customer's View
+Customer's View
 Homepage: 
 ![image](https://user-images.githubusercontent.com/93403773/230295325-243bca91-e932-44d8-bd48-482ca78f1c78.png)
 
